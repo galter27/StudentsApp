@@ -1,39 +1,60 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/white"
     android:padding="16dp">
 
+    <!-- Avatar Image -->
+    <ImageView
+        android:id="@+id/image_view_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"/>
+
+    <!-- Name EditText -->
     <EditText
-        android:id="@+id/edit_student_name"
+        android:id="@+id/edit_text_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:hint="Enter Name"
+        android:textSize="18sp"
+        android:layout_below="@id/image_view_avatar"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Phone EditText -->
     <EditText
-        android:id="@+id/edit_student_id"
+        android:id="@+id/edit_text_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ID"
-        android:inputType="number" />
+        android:hint="Enter Phone Number"
+        android:textSize="18sp"
+        android:layout_below="@id/edit_text_name"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Address EditText -->
     <EditText
-        android:id="@+id/edit_student_phone"
+        android:id="@+id/edit_text_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:inputType="phone" />
+        android:hint="Enter Address"
+        android:textSize="18sp"
+        android:layout_below="@id/edit_text_phone"
+        android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/edit_student_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Address" />
-
+    <!-- Save Button -->
     <Button
-        android:id="@+id/save_student_button"
-        android:layout_width="match_parent"
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save" />
-</LinearLayout>
+        android:text="Save"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorAccent"
+        android:layout_below="@id/edit_text_address"
+        android:layout_marginTop="24dp" />
+
+</RelativeLayout>

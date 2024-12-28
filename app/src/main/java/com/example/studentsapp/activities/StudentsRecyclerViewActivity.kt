@@ -14,6 +14,8 @@ import com.example.studentsapp.adapters.StudentsRecyclerAdapter
 import com.example.studentsapp.models.Student
 import com.example.studentsapp.data.StudentDatabase
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.widget.TextView
+
 
 interface OnItemClickListener {
     fun onItemClick(position: Int)
@@ -28,6 +30,10 @@ class StudentsRecyclerViewActivity : AppCompatActivity(), OnItemClickListener {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_students_recycler_view)
+
+        // Set the title TextView
+        val titleTextView: TextView = findViewById(R.id.sub_title)
+        titleTextView.text = "Click on + to add new student"
 
         // Set up FAB click listener
         findViewById<FloatingActionButton>(R.id.fab_add_student).setOnClickListener {
@@ -67,6 +73,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity(), OnItemClickListener {
     override fun onResume() {
         super.onResume()
         students = StudentDatabase.students // Refresh the students list
-        findViewById<RecyclerView>(R.id.students_recycler_view).adapter?.notifyDataSetChanged() // Notify the adapter to refresh data
+        // Notify the adapter to refresh data
+        findViewById<RecyclerView>(R.id.students_recycler_view).adapter?.notifyDataSetChanged()
     }
 }

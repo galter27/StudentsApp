@@ -12,12 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudentsApp"
         tools:targetApi="31">
+
+        <!-- Student Details Activity -->
         <activity
             android:name=".activities.StudentDetailsActivity"
             android:exported="false" />
+
+        <!-- Add New Student Activity -->
         <activity
             android:name=".activities.AddNewStudentActivity"
             android:exported="false" />
+
+        <!-- Edit Student Activity -->
+        <activity
+            android:name=".activities.EditStudentActivity"
+            android:exported="false" />
+
+        <!-- Students RecyclerView Activity -->
         <activity
             android:name=".activities.StudentsRecyclerViewActivity"
             android:exported="true">

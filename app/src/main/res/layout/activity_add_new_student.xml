@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Student"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Static Image-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/avatar"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitCenter" />
+
+    <!-- Student ID -->
+    <EditText
+        android:id="@+id/edit_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter student ID"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background" />
+
+    <!-- Student Name -->
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter student name"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background" />
+
+    <!-- Phone Number -->
+    <EditText
+        android:id="@+id/edit_text_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter student phone number"
+        android:inputType="phone"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background" />
+
+    <!-- Address -->
+    <EditText
+        android:id="@+id/edit_text_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter student address"
+        android:inputType="text"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background" />
+
+    <!-- CheckBox for student checked option -->
+    <CheckBox
+        android:id="@+id/checkbox_checked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Checked"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Add Student Button -->
+    <Button
+        android:id="@+id/button_add_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Student"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="16dp"
+        android:padding="16dp" />
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        android:padding="16dp" />
+</LinearLayout>

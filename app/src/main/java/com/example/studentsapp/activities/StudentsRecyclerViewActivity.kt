@@ -13,6 +13,7 @@ import com.example.studentsapp.R
 import com.example.studentsapp.adapters.StudentsRecyclerAdapter
 import com.example.studentsapp.models.Student
 import com.example.studentsapp.data.StudentDatabase
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 interface OnItemClickListener {
     fun onItemClick(position: Int)
@@ -28,10 +29,10 @@ class StudentsRecyclerViewActivity : AppCompatActivity(), OnItemClickListener {
         enableEdgeToEdge()
         setContentView(R.layout.activity_students_recycler_view)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        // Set up FAB click listener
+        findViewById<FloatingActionButton>(R.id.fab_add_student).setOnClickListener {
+            val intent = Intent(this, AddNewStudentActivity::class.java)
+            startActivity(intent)
         }
 
         students = StudentDatabase.students

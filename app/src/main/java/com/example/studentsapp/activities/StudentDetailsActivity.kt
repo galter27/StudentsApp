@@ -3,7 +3,6 @@ package com.example.studentsapp.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -33,17 +32,18 @@ class StudentDetailsActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.text_view_phone).text = "Phone: ${it.phoneNumber}"
             findViewById<TextView>(R.id.text_view_address).text = "Address: ${it.address}"
 
+            // Display the static avatar image (you can use the same avatar for all students)
             val avatarImageView = findViewById<ImageView>(R.id.image_view_avatar)
             avatarImageView.setImageResource(R.drawable.avatar) // Set static image
 
-            // Set the CheckBox state based on the student's checked status
-            val checkedCheckBox = findViewById<CheckBox>(R.id.checkbox_checked)
-            checkedCheckBox.isChecked = it.isChecked
+            // Set the Checked status as TextView
+            val checkedTextView = findViewById<TextView>(R.id.text_view_checked)
+            checkedTextView.text = "Checked: ${if (it.isChecked) "Checked" else "Not Checked"}"
         }
 
         // Set up the Back Button
         findViewById<Button>(R.id.button_back).setOnClickListener {
-            finish()
+            finish() // This will return to the previous activity
         }
     }
 }

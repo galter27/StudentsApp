@@ -1,72 +1,100 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".activities.AddNewStudentActivity">
 
     <!-- Title -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/text_view_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Add Student"
         android:textSize="24sp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:layout_marginBottom="24dp"
-        android:gravity="center" />
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_avatar"
+        android:layout_marginBottom="24dp" />
 
-    <!-- Static Image-->
+    <!-- Static Image -->
     <ImageView
-        android:layout_width="match_parent"
+        android:id="@+id/image_view_avatar"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:src="@drawable/avatar"
-        android:layout_marginBottom="24dp"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_id"
+        android:layout_marginBottom="24dp" />
 
     <!-- Student ID -->
     <EditText
         android:id="@+id/edit_text_id"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter student ID"
         android:inputType="text"
-        android:layout_marginBottom="16dp"
         android:padding="12dp"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
+        android:layout_marginBottom="16dp" />
 
     <!-- Student Name -->
     <EditText
         android:id="@+id/edit_text_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter student name"
         android:inputType="text"
-        android:layout_marginBottom="16dp"
         android:padding="12dp"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_phone_number"
+        android:layout_marginBottom="16dp" />
 
     <!-- Phone Number -->
     <EditText
         android:id="@+id/edit_text_phone_number"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter student phone number"
         android:inputType="phone"
-        android:layout_marginBottom="16dp"
         android:padding="12dp"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_address"
+        android:layout_marginBottom="16dp" />
 
     <!-- Address -->
     <EditText
         android:id="@+id/edit_text_address"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter student address"
         android:inputType="text"
-        android:layout_marginBottom="24dp"
         android:padding="12dp"
-        android:background="@drawable/edittext_background" />
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_phone_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/checkbox_checked"
+        android:layout_marginBottom="24dp" />
 
     <!-- CheckBox for student checked option -->
     <CheckBox
@@ -74,29 +102,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Checked"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_student"
         android:layout_marginBottom="24dp" />
 
-    <!-- Add Student Button -->
     <Button
         android:id="@+id/button_add_student"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Student"
+        android:text="Save"
         android:textSize="16sp"
         android:textColor="@android:color/white"
         android:background="@color/colorAccent"
-        android:layout_marginTop="16dp"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-    <!-- Cancel Button -->
+    <!-- Cancel Button (aligned to the left) -->
     <Button
         android:id="@+id/button_cancel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
         android:textSize="16sp"
         android:textColor="@android:color/white"
         android:background="@android:color/darker_gray"
-        android:layout_marginTop="8dp"
-        android:padding="16dp" />
-</LinearLayout>
+        android:padding="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,10 +56,9 @@ class StudentsRecyclerViewActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClick(student: Student?) {
-        // Redirect to EditStudentActivity with the student ID
         student?.let {
-            val intent = Intent(this@StudentsRecyclerViewActivity, EditStudentActivity::class.java)
-            intent.putExtra("student_id", it.id) // Pass the student ID to the next activity
+            val intent = Intent(this@StudentsRecyclerViewActivity, StudentDetailsActivity::class.java)
+            intent.putExtra("student_id", it.id) // Pass the student ID (make sure it's the correct type)
             startActivity(intent)
         }
     }

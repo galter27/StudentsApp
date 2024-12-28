@@ -13,10 +13,10 @@
         android:theme="@style/Theme.StudentsApp"
         tools:targetApi="31">
         <activity
-            android:name=".activities.AddNewStudentActivity"
+            android:name=".activities.StudentDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.EditStudentActivity"
+            android:name=".activities.AddNewStudentActivity"
             android:exported="false" />
         <activity
             android:name=".activities.StudentsRecyclerViewActivity"

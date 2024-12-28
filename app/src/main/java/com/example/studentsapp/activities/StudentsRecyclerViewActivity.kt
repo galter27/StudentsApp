@@ -1,12 +1,11 @@
 package com.example.studentsapp.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentsapp.R
@@ -70,6 +69,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     // Refresh the RecyclerView when returning from EditStudentActivity
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         students = StudentDatabase.students // Refresh the students list

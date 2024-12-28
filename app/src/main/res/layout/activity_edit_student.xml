@@ -48,13 +48,36 @@
     <!-- Save Button -->
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"
         android:textSize="16sp"
         android:textColor="@android:color/white"
-        android:background="@color/colorAccent"
         android:layout_below="@id/edit_text_address"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button" />
 
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/button_save"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button" />
+
+    <!-- Delete Button -->
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/button_cancel"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button" />
 </RelativeLayout>

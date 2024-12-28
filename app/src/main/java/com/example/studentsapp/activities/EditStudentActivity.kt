@@ -1,12 +1,15 @@
 package com.example.studentsapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.studentsapp.R
 import com.example.studentsapp.data.StudentDatabase
 import com.example.studentsapp.models.Student
+
 
 class EditStudentActivity : AppCompatActivity() {
 
@@ -33,7 +36,7 @@ class EditStudentActivity : AppCompatActivity() {
             phoneEditText.setText(student.phoneNumber.toString())
             addressEditText.setText(student.address)
 
-            // Set up the Save Button to update the student details
+            // Save Button to update the student details
             findViewById<Button>(R.id.button_save).setOnClickListener {
                 // Save the updated student details
                 student.name = nameEditText.text.toString()
@@ -50,6 +53,26 @@ class EditStudentActivity : AppCompatActivity() {
                 // Optionally, return to the previous screen
                 finish()
             }
+
+            // Cancel Button
+            findViewById<Button>(R.id.button_cancel).setOnClickListener {
+                finish()
+            }
+
+            // Delete Button
+            findViewById<Button>(R.id.button_delete).setOnClickListener {
+                student.let { student ->
+                    // Remove student from the database
+                    StudentDatabase.students.remove(student)
+                    val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    Toast.makeText(this, "Student deleted", Toast.LENGTH_SHORT).show()
+                    // Ensure the EditStudentActivity is closed
+                    finish()
+                }
+            }
+
         }
     }
 }

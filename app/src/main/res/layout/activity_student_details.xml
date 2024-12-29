@@ -11,7 +11,7 @@
         android:layout_height="200dp"
         android:src="@drawable/avatar"
         android:layout_marginBottom="24dp"
-        android:scaleType="fitCenter"/>
+        android:scaleType="fitCenter" />
 
 
     <!-- Student ID -->
@@ -23,7 +23,7 @@
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/image_view_avatar"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Student Name -->
     <TextView
@@ -34,7 +34,7 @@
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/text_view_id"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Student Phone -->
     <TextView
@@ -45,7 +45,7 @@
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/text_view_name"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Student Address -->
     <TextView
@@ -56,7 +56,7 @@
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/text_view_phone"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Student Checked Status as Text -->
     <TextView
@@ -67,35 +67,33 @@
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:layout_below="@id/text_view_address"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- Back Button at the Bottom-Left -->
     <Button
         android:id="@+id/button_back"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Back"
         android:textSize="16sp"
         android:textColor="@android:color/white"
-        android:background="@color/colorAccent"
+        android:background="@drawable/rounded_button"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_marginBottom="24dp"
-        android:layout_marginLeft="16dp"
-        android:padding="16dp"/>
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp" />
 
     <Button
         android:id="@+id/button_edit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit"
         android:textSize="16sp"
         android:textColor="@android:color/white"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="24dp"
-        android:layout_marginRight="16dp"
-        android:padding="16dp"/>
+        android:background="@drawable/rounded_button"
+        android:layout_above="@id/button_back"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp" />
 
 </RelativeLayout>

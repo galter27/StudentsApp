@@ -37,9 +37,7 @@ class StudentDetailsActivity : AppCompatActivity() {
             finish() // This will return to the previous activity
         }
     }
-
-
-
+    
     override fun onResume() {
         super.onResume()
 

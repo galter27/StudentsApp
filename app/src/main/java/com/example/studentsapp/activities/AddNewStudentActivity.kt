@@ -40,16 +40,16 @@ class AddNewStudentActivity : AppCompatActivity() {
             val name = nameEditText.text.toString()
             val phoneNumber = phoneNumberEditText.text.toString().toLongOrNull()
             val address = addressEditText.text.toString()
-            val isChecked = checkedCheckBox.isChecked  // Capture the state of the checkbox
+            val isChecked = checkedCheckBox.isChecked
 
             if (id.isNotEmpty() && name.isNotEmpty() && phoneNumber != null && address.isNotEmpty()) {
                 // Create a new student with the checkbox state for isChecked
                 val student = Student(
-                    id = id,  // Allow the user to input the student ID
+                    id = id,
                     name = name,
                     phoneNumber = phoneNumber,
                     address = address,
-                    isChecked = isChecked  // Set the isChecked value based on the checkbox
+                    isChecked = isChecked
                 )
                 // Add the new student to the database
                 StudentDatabase.students.add(student)

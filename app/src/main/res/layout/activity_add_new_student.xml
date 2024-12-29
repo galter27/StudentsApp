@@ -108,33 +108,36 @@
         app:layout_constraintBottom_toTopOf="@+id/button_add_student"
         android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/button_add_student"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:background="@color/colorAccent"
-        android:padding="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <!-- Cancel Button (aligned to the left) -->
+    <!-- Cancel Button -->
     <Button
         android:id="@+id/button_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Cancel"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:background="@android:color/darker_gray"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/rounded_button"
         android:padding="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_add_student"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/button_add_student"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_button"
+        android:padding="16dp"
+        android:text="Save"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
